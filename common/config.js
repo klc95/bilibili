@@ -1,0 +1,1 @@
+export const baseUrl = "https://www.fastmock.site/mock/bd725f8a6131d8bf36e6cfb950286243/bilibili";
