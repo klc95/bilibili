@@ -27,7 +27,7 @@
 								<view class="item-content">晴天</view>
 							</view> -->
 								<view class="search-history-item" v-for="(item, index) in searchHistory" :key="index" @tap="handleToWord(item)">
-									<text class="iconfont icon-lishijilu_o"></text>
+									<text class="iconfont icon-lishijilu"></text>
 									<view class="item-content">{{ item }}</view>
 								</view>
 								<view class="clear-search-history" @tap="handleClearHistory" v-show="searchHistory.length">清除历史记录</view>

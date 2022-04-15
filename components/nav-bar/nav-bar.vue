@@ -1,7 +1,7 @@
 <template>
 	<view class="nav-bar">
 			<view>
-				<image src="@/static/logo.png" mode=""></image>
+				<image src="@/static/logo.png" mode="" @tap="handleToIndex"></image>
 			</view>
 			<view class="nav-bar-icon">
 				<text class="iconfont icon-sousuo" @tap="handleToSearch"></text>
@@ -20,6 +20,11 @@
 			};
 		},
 		methods: {
+			handleToIndex() {
+				uni.navigateTo({
+					url: "/pages/index/index"
+				});
+			},
 			handleToSearch() {
 				uni.navigateTo({
 					url: "/pages/search/search"
