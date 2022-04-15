@@ -98,6 +98,7 @@ export default {
 		justify-content: space-around;
 		transform: translateX(0px);
 		transition-duration: 300ms;
+		margin-bottom: 10px;
 		.tab {
 			height: 40px;
 			line-height: 40px;

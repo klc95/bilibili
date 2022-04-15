@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<view v-show="!isLoading" class="header">
+		<view v-show="!isLoading" class="content-header">
 			<nav-bar></nav-bar>
 			<tab :tabList="tabList" :subTabList="subTabList" @setContentId="getContentId"></tab>
 		</view>
@@ -23,7 +23,7 @@
 						</view>
 						<view class="video-item-title">你好，旧时光</view>
 					</view> -->
-					<view class="video-item" v-for="(item, index) in topicContent" :key="index">
+					<view class="video-item" v-for="(item, index) in topicContent" :key="index" @tap="handleToDetail(132)">
 						<view class="video-item-content">
 							<img :src="item.pic" mode="" />
 							<view class="video-item-count">
@@ -33,7 +33,7 @@
 								</view>
 								<view class="barrage">
 									<text class="iconfont icon-danmushu"></text>
-									<span>{{ item.video_review | formatCount }}</span>
+									<span>{{ item.video_barrage | formatCount }}</span>
 								</view>
 							</view>
 						</view>
@@ -99,6 +99,11 @@ export default {
 		getContentId(val) {
 			console.log("tab组件传回来的contentId收到了",val)
 			this.tabId = val.tabId;
+		},
+		handleToDetail(aid){
+			uni.navigateTo({
+				url:`../detail/detail?aid=${aid}`
+			})
 		}
 	}
 };
@@ -106,7 +111,7 @@ export default {
 
 <style lang="scss" scoped>
 .content {
-	.header {
+	.content-header {
 		position: fixed;
 		width: 100%;
 		z-index: 100;
